@@ -42,6 +42,8 @@ Config commands are out of scope.
 
 On SONiC systems, the relationship between front-panel label ports, their physical lanes, and the correlated SONiC interface names changes by platform and by breakout configuration. With more complex setups, such as multi-ASIC systems, this mapping becomes even more complicated, which raised the need for a CLI that provides a single, standardized view that shows, for each front-panel label port, how it maps to lanes and SONiC interfaces under the current split mode.
 
+The purpose of this command is to correlate the fibers of a passive connector (such as MPO or MMC) with the SONiC ports wired through that connector, and to report the status of each one. In this context a label port identifies the panel position where such a connector is plugged in, and its lanes are the fibers inside it. Each lane column corresponds to a fiber of the connector, so the table tells which interface a given fiber carries, and the operational status of the port.
+
 ### Requirements
 
 - Provide a read-only CLI (`show interfaces label-port status`) that maps each front-panel label port to its lanes, SONiC interfaces, and operational status under the current breakout configuration.
